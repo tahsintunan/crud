@@ -1,34 +1,27 @@
+require('dotenv').config();
+
 import express from 'express';
 import { json, urlencoded } from 'body-parser';
 
-const port = process.env.PORT || 9000;
 
+const port = process.env.SERVER_PORT || 9000;
 const app = express();
 app.use(json());
 app.use(urlencoded({extended: true}));
+
 
 app.get('/', (req: express.Request, res: express.Response) => {
     // posts will be shown chronologically
     res.send(`Bruh`);
 })
 
-app.post('/register', (req: express.Request, res: express.Response) => {
-    // check database for existing user
-    // register a new user
-})
-
-app.post('/login', (req: express.Request, res: express.Response) => {
-    // check username and match password
-    // then, authenticate ans serialize using jwt
+app.post('/post', (req: express.Request, res: express.Response) => {
+    // create post
+    // then, return post
 })
 
 app.get('/posts/:postId', (req: express.Request, res: express.Response) => {
     // get post by id
-    // then, return post
-})
-
-app.post('/post', (req: express.Request, res: express.Response) => {
-    // create post
     // then, return post
 })
 
