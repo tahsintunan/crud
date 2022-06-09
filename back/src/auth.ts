@@ -2,29 +2,7 @@ require('dotenv').config();
 
 import express from 'express';
 import { json, urlencoded } from 'body-parser';
-
-
-//.................................................................................................
-// import { Client } from 'pg';
-// const client = new Client({
-//     user: process.env.DB_USER,
-//     host: process.env.DB_HOST,
-//     database: process.env.DB_NAME,
-//     password: process.env.DB_PASSWORD,
-//     port: parseInt(process.env.DB_PORT || '5432')
-// });
-// client.connect();
-// client.query('SELECT * FROM "public".user', (err, res) => {
-//     if (!err) {
-//         // console.log(res.rows.length);
-//         // console.log(res.rows);
-//         console.log(res.rows[1].email);
-//     } else {
-//         console.log(err);
-//     }
-//     client.end();
-// })
-//.................................................................................................
+import { queryDB } from './db';
 
 
 const port = process.env.AUTH_PORT || 6000;
