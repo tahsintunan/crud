@@ -6,11 +6,7 @@ const blogController = require('../controllers/blogController');
 
 router.get('/', blogController.getAllBlogs);
 router.get('/posts/:postId', blogController.getBlogpost);
-
-router.delete('/posts/:postId', (req, res) => {
-    // delete post by id
-    // then, return to user/posts/home/previous page
-})
+router.delete('/posts/:postId', blogController.deleteBlogpost);
 
 router.post('/post', (req, res) => {
     // create post

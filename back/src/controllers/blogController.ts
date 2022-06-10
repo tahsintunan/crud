@@ -22,6 +22,16 @@ const getBlogpost = (req: Request, res: Response) => {
     });
 }
 
+const deleteBlogpost = (req: Request, res: Response) => {
+    // delete a blogpost by it's post id (:postId)
+    const id = parseInt(req.params.postId);
+    const queryString = `DELETE FROM "public".post WHERE id = $1;`;
+    const values = [id];
+    pool.query(queryString, values, (error, results) => {
+        if (error) throw error;
+        res.status(200).json({message: 'Blogpost deleted successfully'});
+    });
+}
 
 const createBlogpost = (req: Request, res: Response) => {
     const {title, content} = req.body;
@@ -38,4 +48,5 @@ const createBlogpost = (req: Request, res: Response) => {
 export { 
     getAllBlogs,
     getBlogpost,
+    deleteBlogpost,
 };
