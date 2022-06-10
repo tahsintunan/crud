@@ -1,8 +1,17 @@
 require('dotenv').config();
-import { Client } from 'pg';
+// import { Client } from 'pg';
+import { Pool } from 'pg';
 
 
-const client = new Client({
+// const client = new Client({
+//     user: process.env.DB_USER,
+//     host: process.env.DB_HOST,
+//     database: process.env.DB_NAME,
+//     password: process.env.DB_PASSWORD,
+//     port: parseInt(process.env.DB_PORT || '5432')
+// });
+
+const pool = new Pool({
     user: process.env.DB_USER,
     host: process.env.DB_HOST,
     database: process.env.DB_NAME,
@@ -11,20 +20,23 @@ const client = new Client({
 });
 
 
-const queryDB = async (queryString: string, values: any[]) => {
-    try {
-        await client.connect();
-        const res = await client.query(queryString, values);
-        return res.rows;
-    } catch (err) {
-        console.log(err);
-    } finally {
-        await client.end();
-    }
-}
+// const queryDB = async (queryString: string, values: any[]) => {
+//     try {
+//         await client.connect();
+//         const res = await client.query(queryString, values);
+//         return res.rows;
+//     } catch (err) {
+//         console.log(err);
+//     } finally {
+//         await client.end();
+//     }
+// }
+
+// export { queryDB };
 
 
-export { queryDB };
+
+export { pool };
 
 
 
