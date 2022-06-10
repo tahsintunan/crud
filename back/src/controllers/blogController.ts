@@ -22,9 +22,12 @@ const getBlogpost = (req: Request, res: Response) => {
     });
 }
 
+
+
 const deleteBlogpost = (req: Request, res: Response) => {
     // delete a blogpost by it's post id (:postId)
     const id = parseInt(req.params.postId);
+    if (!postExists(id)) res.status(404).json({error: 'Post could not be found'});
     const queryString = `DELETE FROM "public".post WHERE id = $1;`;
     const values = [id];
     pool.query(queryString, values, (error, results) => {
@@ -43,6 +46,20 @@ const deleteBlogpost = (req: Request, res: Response) => {
 //         res.status(201).json({message: 'Blogpost created successfully'});
 //     });
 // }
+
+
+const postExists = (id: number) => {
+    // check if a blogpost with the given post id exists
+    let exists = false;
+    const queryString = `SELECT * FROM "public".post WHERE id = $1;`;
+    const values = [id];
+    pool.query(queryString, values, (error, results) => {
+        if (error) throw error;
+        exists = results.rows.length > 0;
+    });
+    return exists;
+}
+
 
 
 export { 
