@@ -11,11 +11,11 @@ const client = new Client({
 });
 
 
-async function queryDB(queryString: string, values: any[], callback: (result: any) => void) {
+const queryDB = async (queryString: string, values: any[]) => {
     try {
         await client.connect();
         const res = await client.query(queryString, values);
-        callback(res);
+        return res.rows;
     } catch (err) {
         console.log(err);
     } finally {
@@ -38,4 +38,28 @@ async function getUsers(query: string, callback: (result: any) => void) {
 }
 
 getUsers('SELECT * FROM "public".user', callbackQueryDB);
+*/
+
+
+/*
+const a = queryDB('SELECT * FROM "public".user', []);
+a
+    .then(res => console.log(res))
+    .catch(err => console.log(err));
+*/
+
+
+/*
+const getUser = async (id: number) => {
+    try{
+        const query = 'SELECT * FROM "public".user WHERE id = $1';
+        const values = [id];
+        const result = await queryDB(query, values);
+        console.log(result);
+    }catch{
+        console.log('error');
+    }
+}
+
+getUser(2);
 */
