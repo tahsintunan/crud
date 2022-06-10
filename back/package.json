@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon ./src/server.ts",
-    "devstart": "nodemon ./src/auth.ts",
+    "start": "npm ./src/server.ts",
+    "devstart": "nodemon ./src/server.ts",
+    "devauth": "nodemon ./src/controllers/auth.ts",
+    "devdb": "nodemon ./src/db/db.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

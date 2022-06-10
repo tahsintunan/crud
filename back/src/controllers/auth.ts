@@ -2,7 +2,7 @@ require('dotenv').config();
 
 import express from 'express';
 import { json, urlencoded } from 'body-parser';
-import { queryDB } from './db';
+import { queryDB } from '../db/db';
 
 
 const port = process.env.AUTH_PORT || 6000;
