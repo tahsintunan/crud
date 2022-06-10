@@ -33,16 +33,16 @@ const deleteBlogpost = (req: Request, res: Response) => {
     });
 }
 
-const createBlogpost = (req: Request, res: Response) => {
-    const {title, content} = req.body;
-    // INSERT INTO "public".post (user_id, content) VALUES (1, 'NEW2');
-    const queryString = `INSERT INTO "public".post (user_id, title, content) VALUES ($1, $2, $3)`;
-    const values = [title, content];
-    pool.query(queryString, values, (error, results) => {
-        if (error) throw error;
-        res.status(201).json({message: 'Blogpost created successfully'});
-    });
-}
+// const createBlogpost = (req: Request, res: Response) => {
+//     const {title, content} = req.body;
+//     // INSERT INTO "public".post (user_id, content) VALUES (1, 'NEW2');
+//     const queryString = `INSERT INTO "public".post (user_id, title, content) VALUES ($1, $2, $3)`;
+//     const values = [title, content];
+//     pool.query(queryString, values, (error, results) => {
+//         if (error) throw error;
+//         res.status(201).json({message: 'Blogpost created successfully'});
+//     });
+// }
 
 
 export { 
