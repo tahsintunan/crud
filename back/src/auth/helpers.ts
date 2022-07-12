@@ -29,7 +29,7 @@ const generateAuthToken = (user: any) => {
         name: user.name,
         email: user.email
     };
-    const token = jwt.sign(payload, process.env.JWT_SECRET as string, {
+    const token = jwt.sign(payload, process.env.JWT_SECRET as jwt.Secret, {
         expiresIn: '7d',
         algorithm: "HS256"
     });
