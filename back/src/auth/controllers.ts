@@ -63,7 +63,9 @@ const logoutController = async (req: any, res: any, next: any) => {
         return res.sendStatus(401);
     }
     res.setHeader(`Set-Cookie`, `authorization=; Path=/; HttpOnly; Max-Age=0`);
-    return res.sendStatus(200);
+    return res.status(200).json({
+        message: 'User logged out'
+    });
 }
 
 
