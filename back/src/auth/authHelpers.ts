@@ -64,7 +64,7 @@ const hashPassword = async (password: string) => {
 // Helper function to check validity of token and return true or false
 const verifyToken = (token: string) => {
     try {
-        jwt.verify(token, process.env.JWT_SECRET as string);
+        jwt.verify(token, process.env.JWT_SECRET as jwt.Secret);
         return true;
     }
     catch (err) {

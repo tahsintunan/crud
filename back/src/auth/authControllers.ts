@@ -1,4 +1,4 @@
-import { getUserByEmail, matchPassword, generateAuthToken, createNewUser, verifyToken } from './helpers';
+import { getUserByEmail, matchPassword, generateAuthToken, createNewUser, verifyToken } from './authHelpers';
 
 
 // Controller to register new user
