@@ -5,7 +5,8 @@ import {
     generateAuthToken,
     createNewUser,
     verifyToken
-} from '../helpers/authHelpers';
+} from '../utils/authUtils';
+
 
 
 // Controller to register new user
@@ -32,7 +33,6 @@ const registerController = async (req: Request, res: Response, next: NextFunctio
         message: 'User created'
     });
 }
-
 
 
 // Controller to login a user
@@ -62,7 +62,6 @@ const loginController = async (req: Request, res: Response, next: NextFunction) 
 };
 
 
-
 // Controller to log a user out
 const logoutController = async (req: Request, res: Response, next: NextFunction) => {
     const token = req.cookies.authorization;
@@ -76,5 +75,8 @@ const logoutController = async (req: Request, res: Response, next: NextFunction)
 }
 
 
-
-export { registerController, loginController, logoutController };
+export {
+    registerController,
+    loginController,
+    logoutController
+};

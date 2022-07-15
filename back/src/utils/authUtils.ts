@@ -6,6 +6,7 @@ import { queryDB } from '../db/dbconfig';
 import { User } from '../models/user';
 
 
+
 // Helper function to grab user by email from database and return user
 const getUserByEmail = async (email: string) => {
     const query = 'SELECT * FROM "public".user WHERE email = $1';
@@ -15,13 +16,11 @@ const getUserByEmail = async (email: string) => {
     return res[0];
 }
 
-
 // Helper function match password to hash in database and return true or false
 const matchPassword = async (password: string, hash: string) => {
     const match = await bcrypt.compare(password, hash);
     return match;
 }
-
 
 // Helper function to generate auth token for user (with 7d expire time) and return token
 const generateAuthToken = (user: User) => {
@@ -36,7 +35,6 @@ const generateAuthToken = (user: User) => {
     });
     return token;
 }
-
 
 // Helper function to create new user in database and return true or false
 const createNewUser = async (name: string, email: string, password: string) => {
@@ -53,14 +51,12 @@ const createNewUser = async (name: string, email: string, password: string) => {
     }
 }
 
-
 // Helper function to hash password and return hash
 const hashPassword = async (password: string) => {
     const saltRounds = 10;
     const hash = await bcrypt.hash(password, saltRounds)
     return hash;
 }
-
 
 // Helper function to check validity of token and return true or false
 const verifyToken = (token: string) => {
@@ -74,4 +70,11 @@ const verifyToken = (token: string) => {
 }
 
 
-export { getUserByEmail, matchPassword, generateAuthToken, createNewUser, verifyToken, hashPassword };
+export {
+    getUserByEmail,
+    matchPassword,
+    generateAuthToken,
+    createNewUser,
+    verifyToken,
+    hashPassword
+};

@@ -5,6 +5,7 @@ import { Blog } from "../models/blog";
 
 
 
+// Helper function to get all blogs
 const getAllBlogsDB = async () => {
     const blogs = await queryDB(
         'SELECT * FROM "public".post ORDER BY created_at DESC',
@@ -13,6 +14,7 @@ const getAllBlogsDB = async () => {
     return blogs;
 };
 
+// Helper function to get one blog
 const getOneBlogDB = async (id: string) => {
     const blog = await queryDB('select * from "public".post WHERE id = $1', [id]);
     if (!blog || blog.length === 0) {
@@ -21,6 +23,7 @@ const getOneBlogDB = async (id: string) => {
     return blog[0];
 };
 
+// Helper function to create a blog
 const createBlogDB = async (blog: Blog) => {
     try {
         const query =
@@ -34,6 +37,7 @@ const createBlogDB = async (blog: Blog) => {
     }
 };
 
+// Helper function to update a blog
 const updateBlogDB = async (blog: Blog) => {
     try {
         const query =
@@ -47,6 +51,7 @@ const updateBlogDB = async (blog: Blog) => {
     }
 };
 
+// Helper function to delete a blog
 const deleteBlogDB = async (id: string) => {
     try {
         const query = 'DELETE FROM "public".post WHERE id = $1';
@@ -59,6 +64,7 @@ const deleteBlogDB = async (id: string) => {
     }
 };
 
+// Helper function to check if a blog is owned by a user
 const userOwnsBlog = async (userId: string, blogId: string) => {
     const blog = await getOneBlogDB(blogId);
     if (!blog) {
@@ -66,6 +72,7 @@ const userOwnsBlog = async (userId: string, blogId: string) => {
     }
     return blog.poster_id === userId;
 };
+
 
 export {
     getAllBlogsDB,
