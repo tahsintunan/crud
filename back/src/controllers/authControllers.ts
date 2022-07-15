@@ -1,5 +1,11 @@
 import { Request, Response, NextFunction } from 'express';
-import { getUserByEmail, matchPassword, generateAuthToken, createNewUser, verifyToken } from './authHelpers';
+import {
+    getUserByEmail,
+    matchPassword,
+    generateAuthToken,
+    createNewUser,
+    verifyToken
+} from '../helpers/authHelpers';
 
 
 // Controller to register new user

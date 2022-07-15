@@ -1,6 +1,6 @@
 import { Response } from "express";
-import { Blog } from "../../models/blog";
-import { ApiRequest } from "../../interfaces/apiRequest";
+import { Blog } from "../models/blog";
+import { ApiRequest } from "../interfaces/apiRequest";
 import {
     getAllBlogsDB,
     getOneBlogDB,
@@ -8,7 +8,7 @@ import {
     updateBlogDB,
     deleteBlogDB,
     userOwnsBlog,
-} from "./blogHelpers";
+} from "../helpers/blogHelpers";
 
 
 // Controller for getting all blogs

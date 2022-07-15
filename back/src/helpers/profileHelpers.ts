@@ -1,7 +1,7 @@
 import "dotenv/config";
 
-import { queryDB } from "../../db/dbconfig";
-import { User } from "../../models/user";
+import { queryDB } from "../db/dbconfig";
+import { User } from "../models/user";
 
 
 

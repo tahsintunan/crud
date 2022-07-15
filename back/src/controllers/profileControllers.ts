@@ -1,9 +1,9 @@
 import { Response } from 'express';
-import { ApiRequest } from "../../interfaces/apiRequest";
-import { User } from "../../models/user";
-import { getProfileDB, updateProfileDB } from './profileHelpers';
+import { ApiRequest } from "../interfaces/apiRequest";
+import { User } from "../models/user";
+import { getProfileDB, updateProfileDB } from '../helpers/profileHelpers';
 
-import { getUserByEmail, hashPassword } from '../../auth/authHelpers'; // kechal: I think this is the correct way to do this
+import { getUserByEmail, hashPassword } from '../helpers/authHelpers'; // kechal: I think this is the correct way to do this
 
 
 

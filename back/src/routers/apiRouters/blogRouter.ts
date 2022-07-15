@@ -5,7 +5,7 @@ import {
   createBlogController,
   updateBlogController,
   deleteBlogController,
-} from "../../api/blog/blogControllers";
+} from "../../controllers/blogControllers";
 
 const router = Router();
 
