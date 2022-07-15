@@ -9,4 +9,4 @@ router.post('/login', loginController);
 router.post('/logout', logoutController);
 
 
-export {router as authRouter};
+export { router as authRouter };

@@ -1,13 +1,12 @@
+import { Request, Response } from 'express';
 
 
-
-
-const getProfileController = (req: any, res: any) => {
+const getProfileController = (req: Request, res: Response) => {
     res.send('getProfileController');
 }
 
 
-const updateProfileontroller = (req: any, res: any) => {
+const updateProfileontroller = (req: Request, res: Response) => {
     res.send('updateProfileontroller');
 }
 

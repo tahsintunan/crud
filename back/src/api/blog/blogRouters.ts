@@ -1,21 +1,19 @@
-import { Router } from 'express';
-import { 
-    getAllBlogsController,
-    getOneBlogController,
-    createBlogController,
-    updateBlogController,
-    deleteBlogController
-} from './blogControllers';
-
+import { Router } from "express";
+import {
+  getAllBlogsController,
+  getOneBlogController,
+  createBlogController,
+  updateBlogController,
+  deleteBlogController,
+} from "./blogControllers";
 
 const router = Router();
 
 // routes
-router.get('/', getAllBlogsController);
-router.get('/:id', getOneBlogController);
-router.post('/', createBlogController);
-router.put('/:id', updateBlogController);
-router.delete('/:id', deleteBlogController);
+router.get("/", getAllBlogsController); // get all blogs
+router.get("/:id", getOneBlogController); // get one blog
+router.post("/", createBlogController); // create blog
+router.put("/:id", updateBlogController); // update blog
+router.delete("/:id", deleteBlogController); // delete blog
 
-
-export {router as blogRouter};
+export { router as blogRouter };

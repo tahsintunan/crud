@@ -12,7 +12,7 @@ const app = express();
 
 // Middlewares
 app.use(json());
-app.use(urlencoded({extended: true}));
+app.use(urlencoded({ extended: true }));
 app.use(cookieParser());
 
 // Routers

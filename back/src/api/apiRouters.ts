@@ -10,4 +10,4 @@ router.use('/blog', blogRouter);
 
 
 
-export {router as apiRouter};
+export { router as apiRouter };

@@ -1,8 +1,9 @@
 import 'dotenv/config';
 
-import { queryDB } from '../db/dbconfig';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
+import { queryDB } from '../db/dbconfig';
+import { User } from '../models/user';
 
 
 // Helper function to grab user by email from database and return user
@@ -23,7 +24,7 @@ const matchPassword = async (password: string, hash: string) => {
 
 
 // Helper function to generate auth token for user (with 7d expire time) and return token
-const generateAuthToken = (user: any) => {
+const generateAuthToken = (user: User) => {
     const payload = {
         id: user.id,
         name: user.name,
