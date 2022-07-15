@@ -33,10 +33,10 @@ const createBlogController = async (req: ApiRequest, res: Response) => {
     if (!req.user) {
         return res.status(401).json({ message: "Unauthorized" });
     }
-    const user_id = req.user.id;
+    const userId = req.user.id;
     const { title, content } = req.body;
 
-    const blog = new Blog(title, content, user_id);
+    const blog = new Blog(title, content, userId);
     if (!(await createBlogDB(blog))) {
         return res.status(500).json({ message: "Error creating blog" });
     }
@@ -49,16 +49,16 @@ const updateBlogController = async (req: ApiRequest, res: Response) => {
     if (!req.user) {
         return res.status(401).json({ message: "Unauthorized" });
     }
-    const user_id = req.user.id;
+    const userId = req.user.id;
 
     const blogId = req.params.id;
     const { title, content } = req.body;
 
-    if (!(await userOwnsBlog(user_id, blogId))) {
+    if (!(await userOwnsBlog(userId, blogId))) {
         return res.status(401).json({ message: "Unauthorized" });
     }
 
-    const blog = new Blog(title, content, user_id);
+    const blog = new Blog(title, content, userId);
     blog.id = blogId;
 
     if (!(await updateBlogDB(blog))) {
@@ -74,10 +74,10 @@ const deleteBlogController = async (req: ApiRequest, res: Response) => {
     if (!req.user) {
         return res.status(401).json({ message: "Unauthorized" });
     }
-    const user_id = req.user.id;
+    const userId = req.user.id;
     const blogId = req.params.id;
 
-    if (!(await userOwnsBlog(user_id, blogId))) {
+    if (!(await userOwnsBlog(userId, blogId))) {
         return res.status(401).json({ message: "Unauthorized" });
     }
 

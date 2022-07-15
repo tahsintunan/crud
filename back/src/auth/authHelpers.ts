@@ -74,4 +74,4 @@ const verifyToken = (token: string) => {
 }
 
 
-export { getUserByEmail, matchPassword, generateAuthToken, createNewUser, verifyToken };
+export { getUserByEmail, matchPassword, generateAuthToken, createNewUser, verifyToken, hashPassword };
