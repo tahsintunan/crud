@@ -20,8 +20,8 @@ const getProfileDB = async (userId: string) => {
 const updateProfileDB = async (user: User) => {
     try {
         const query =
-            'UPDATE "public".user SET name = $1, email = $2 WHERE id = $3';
-        const values = [user.name, user.email, user.id];
+            'UPDATE "public".user SET name = $1, email = $2, password = $3 WHERE id = $4';
+        const values = [user.name, user.email, user.password ,user.id];
         await queryDB(query, values);
         return true;
     } catch (err) {

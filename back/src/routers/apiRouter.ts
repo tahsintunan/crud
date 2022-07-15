@@ -1,6 +1,6 @@
 import { Router } from 'express';
-import { profileRouter } from './profile/profileRouters';
-import { blogRouter } from './blog/blogRouters';
+import { profileRouter } from './apiRouters/profileRouter';
+import { blogRouter } from './apiRouters/blogRouter';
 
 
 const router = Router();

@@ -1,5 +1,5 @@
 import { Response } from 'express';
-import { ApiRequest } from "../../models/apiRequest";
+import { ApiRequest } from "../../interfaces/apiRequest";
 import { User } from "../../models/user";
 import { getProfileDB, updateProfileDB } from './profileHelpers';
 

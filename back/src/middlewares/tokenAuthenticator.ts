@@ -1,8 +1,7 @@
-import { Request, Response, NextFunction } from 'express';
-import jwt from 'jsonwebtoken';
-
+import { Response, NextFunction } from 'express';
+import { ApiRequest } from '../interfaces/apiRequest';
 import { User } from '../models/user';
-import { ApiRequest } from '../models/apiRequest';
+import jwt from 'jsonwebtoken';
 
 
 // Middleware to authorize user with token (return user in the request if token is valid)

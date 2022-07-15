@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { getProfileController, updateProfileontroller } from './profileControllers';
+import { getProfileController, updateProfileontroller } from '../../api/profile/profileControllers';
 
 
 const router = Router();
@@ -9,4 +9,4 @@ router.get('/:id', getProfileController);
 router.put('/:id', updateProfileontroller);
 
 
-export {router as profileRouter};
+export { router as profileRouter };

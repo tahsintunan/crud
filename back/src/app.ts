@@ -3,8 +3,8 @@ import 'dotenv/config';
 import express from 'express';
 import cookieParser from 'cookie-parser';
 import { json, urlencoded } from 'body-parser';
-import { authRouter } from './auth/authRouters';
-import { apiRouter } from './api/apiRouters';
+import { authRouter } from './routers/authRouter';
+import { apiRouter } from './routers/apiRouter';
 import { tokenAuthenticator } from './middlewares/tokenAuthenticator';
 
 

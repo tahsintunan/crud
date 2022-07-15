@@ -1,6 +1,6 @@
 import { Response } from "express";
 import { Blog } from "../../models/blog";
-import { ApiRequest } from "../../models/apiRequest";
+import { ApiRequest } from "../../interfaces/apiRequest";
 import {
     getAllBlogsDB,
     getOneBlogDB,
