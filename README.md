@@ -1,6 +1,6 @@
 # CRUD
 
-##### API Documentation can be found ➡️ [here](https://documenter.getpostman.com/view/19268819/UzQvs4aL)
+Read the API Documentation before using the API. The API Documentation can be found ➡️ [**here**](https://documenter.getpostman.com/view/19268819/UzQvs4aL)
 
 ## How to set up for local development
 - Create a postgresql database like [this](https://gist.github.com/tahsintunan/419b8e4bb7c0e43ea93776a0700bc1d0)
