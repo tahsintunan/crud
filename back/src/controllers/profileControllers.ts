@@ -24,6 +24,10 @@ const getProfileController = async (req: ApiRequest, res: Response) => {
 
 // Controller for updating the profile of a user
 const updateProfileontroller = async (req: ApiRequest, res: Response) => {
+    if (!req.body.name || !req.body.email || !req.body.password) {
+        return res.status(400).json({ message: 'Missing fields' });
+    }
+
     if ((!req.user) || (req.user.id != req.params.id)) {
         return res.status(401).json({ message: "Unauthorized" });
     }
@@ -48,7 +52,17 @@ const updateProfileontroller = async (req: ApiRequest, res: Response) => {
 }
 
 
+// Controller for getting the profile of the currently logged in user
+const getMyProfileController = async (req: ApiRequest, res: Response) => {
+    if (!req.user) {
+        return res.status(401).json({ message: "Unauthorized" });
+    }
+    return res.status(200).json(req.user);
+}
+
+
 export {
     getProfileController,
-    updateProfileontroller
+    updateProfileontroller,
+    getMyProfileController
 };

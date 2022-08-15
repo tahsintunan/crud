@@ -8,7 +8,7 @@ import { Blog } from "../models/blog";
 // Helper function to get all blogs
 const getAllBlogsDB = async () => {
     const blogs = await queryDB(
-        'SELECT * FROM "public".post ORDER BY created_at DESC',
+        'SELECT post.id, post.title, post.content, post.created_at, "public".user.name as "poster_name" FROM "public".post join public."user" ON "user".id = post.poster_id ORDER BY post.created_at DESC;',
         []
     );
     return blogs;
