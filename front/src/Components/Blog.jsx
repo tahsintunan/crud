@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import moment from "moment";
 
 const Blog = (props) => {
     return (
@@ -27,9 +28,9 @@ const Blog = (props) => {
             </div>
 
             <dl className="flex mt-6">
-                <div className="flex flex-col-reverse">
-                    <dt className="text-sm font-medium text-gray-600">Published</dt>
-                    <dd className="text-xs text-gray-500">{props.date}</dd>
+                <div className="flex flex-col">
+                    <dt className="text-xs font-medium text-gray-400">Published</dt>
+                    <dd className="text-xs text-gray-500">{moment(props.date.slice(0, 10), "YYYY-MM-DD").format("dddd, MMMM Do YYYY").toString()}</dd>
                 </div>
 
             </dl>

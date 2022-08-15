@@ -26,7 +26,7 @@ const Blogs = () => {
 
     return (
         <>
-        <Topbar />
+            <Topbar />
             {blogs?.length > 0 ? (
                 <>
                     <h1 className="text-center font-bold text-4xl mt-10">Blogs</h1>

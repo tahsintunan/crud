@@ -7,9 +7,9 @@ import AuthRoutes from './Routes/AuthRoutes';
 function App() {
   return (
     <BrowserRouter>
-      <AuthRoutes/>
-      <BlogRoutes/>
-      <UserRoutes/>
+      <AuthRoutes />
+      <BlogRoutes />
+      <UserRoutes />
     </BrowserRouter>
   );
 }
