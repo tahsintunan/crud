@@ -3,6 +3,7 @@ import Input from "Components/FormInput";
 import React, { useEffect, useState } from "react";
 import Alert from "Components/Alert";
 import { useNavigate, useParams } from "react-router-dom";
+import Button from "Components/Button";
 
 
 const EditBlog = () => {
@@ -101,11 +102,12 @@ const EditBlog = () => {
                     onChange={(event) => { setContent(event.target.value) }}
                     rows={6}
                     placeholder="Content" />
-                <button
-                    type="submit"
-                    className=" px-10 py-4 m-auto text-lg text-black font-semibold transition bg-green-300 rounded hover:scale-110 hover:shadow-xl active:bg-green-200 focus:outline-none focus:ring">
-                    {blog ? "Update" : "Create"}
-                </button>
+                <div className="w-full flex justify-center">
+                    <Button
+                        type="submit">
+                        {blog ? "Update" : "Create"}
+                    </Button>
+                </div>
             </form>
 
         </>

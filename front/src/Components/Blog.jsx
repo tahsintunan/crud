@@ -4,36 +4,25 @@ import moment from "moment";
 
 const Blog = (props) => {
     return (
-        <Link
-            className="relative block p-8 overflow-hidden border border-gray-100 rounded-lg w-96 hover:shadow-lg hover:bg-gray-100"
-            to={"/blog/" + props.id}
-        >
-            <span
-                className="absolute inset-x-0 bottom-0 h-2  bg-gradient-to-r from-green-300 via-blue-500 to-purple-600"
-            ></span>
+        <Link to={"/blog/" + props.id} className="relative w-96 p-8 pb-24 border-t-4 border-pink-600 rounded-sm shadow-xl">
+            <h5 className="text-4xl font-bold">{props.title}</h5>
+            <p className="text-md text-gray-800">By {props.username}</p>
+            <p className="text-sm text-gray-500">{moment(props.date.slice(0, 10), "YYYY-MM-DD").format("dddd, MMMM Do YYYY").toString()}</p>
+            <p className="mt-4 text-lg font-medium text-gray-500 line-clamp-2">
+                {props.content}
+            </p>
 
-            <div className="justify-between sm:flex">
-                <div>
-                    <h5 className="text-xl font-bold text-gray-900">
-                        {props.title}
-                    </h5>
-                    <p className="mt-1 text-xs font-medium text-gray-600">By {props.username}</p>
-                </div>
-            </div>
-
-            <div className="mt-4 sm:pr-8">
-                <p className="text-sm text-gray-500 line-clamp-2">
-                    {props.content}
-                </p>
-            </div>
-
-            <dl className="flex mt-6">
-                <div className="flex flex-col">
-                    <dt className="text-xs font-medium text-gray-400">Published</dt>
-                    <dd className="text-xs text-gray-500">{moment(props.date.slice(0, 10), "YYYY-MM-DD").format("dddd, MMMM Do YYYY").toString()}</dd>
-                </div>
-
-            </dl>
+            <span className="absolute bottom-8 right-8">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="w-10 h-10 text-pink-600"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                >
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+            </span>
         </Link>
     )
 }

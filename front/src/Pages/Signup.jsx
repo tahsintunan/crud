@@ -82,8 +82,8 @@ const Signup = () => {
                     required
                     placeholder="Confirm Password" />
 
-                <button className="font-semibold text-lg bg-indigo-500 text-white rounded-lg px-8 py-2 mt-8" type="submit" >Signup</button>
-                <span>Already have an account? <a className=" text-blue-400" href="login">Login</a></span>
+                <button className="font-semibold text-lg bg-pink-500 text-white rounded-lg px-8 py-2 mt-8" type="submit" >Signup</button>
+                <span>Already have an account? <a className=" text-pink-400" href="login">Login</a></span>
             </form>
 
         </>

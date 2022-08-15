@@ -42,8 +42,8 @@ const Login = () => {
                 <Input change={(event) => { setEmail(event.target.value) }} type="email" required placeholder="Email" />
                 <Input change={(event) => { setPassword(event.target.value) }} type="password" required placeholder="Password" />
 
-                <button className="font-semibold text-lg bg-indigo-500 text-white rounded-lg px-8 py-2 mt-8" type="submit" >Login</button>
-                <span>Don't have an account? <a className=" text-blue-400" href="signup">Sign Up</a></span>
+                <button className="font-semibold text-lg bg-pink-500 text-white rounded-lg px-8 py-2 mt-8" type="submit" >Login</button>
+                <span>Don't have an account? <a className=" text-pink-400" href="signup">Sign Up</a></span>
             </form>
         </>
     )

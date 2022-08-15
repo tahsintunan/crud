@@ -12,14 +12,14 @@ const NoBlogs = () => {
 
             <Link
                 to="/blogEdit/new"
-                className="flex items-center justify-between px-5 py-3 mt-8 text-blue-600 border border-blue-600 rounded-lg hover:bg-blue-600 group"
+                className="flex items-center justify-between px-5 py-3 mt-8 text-pink-600 border border-pink-600 rounded-lg hover:bg-pink-600 group"
             >
                 <span className="text-lg font-medium group-hover:text-white">
                     Write a blog
                 </span>
 
                 <span
-                    className="flex-shrink-0 p-2 ml-4 bg-white border border-blue-600 rounded-full"
+                    className="flex-shrink-0 p-2 ml-4 bg-white border border-pink-600 rounded-full"
                 >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"

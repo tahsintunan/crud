@@ -38,7 +38,7 @@ const Topbar = () => {
                         <NavLink
                             to="/blogs/all"
                             className={({ isActive }) =>
-                                isActive ? "block h-16 leading-[4rem] border-b-4 text-red-700 border-current" : "block h-16 leading-[4rem] border-b-4 border-transparent hover:text-red-700 hover:border-current"
+                                isActive ? "block h-16 leading-[4rem] border-b-4 text-pink-700 border-current" : "block h-16 leading-[4rem] border-b-4 border-transparent hover:text-pink-700 hover:border-current"
                             }
                         >
                             Blogs
@@ -46,7 +46,7 @@ const Topbar = () => {
 
                         <NavLink
                             className={({ isActive }) =>
-                                isActive ? "block h-16 leading-[4rem] border-b-4 text-red-700 border-current" : "block h-16 leading-[4rem] border-b-4 border-transparent hover:text-red-700 hover:border-current"
+                                isActive ? "block h-16 leading-[4rem] border-b-4 text-pink-700 border-current" : "block h-16 leading-[4rem] border-b-4 border-transparent hover:text-pink-700 hover:border-current"
                             }
                             to="/blogEdit/new"
                         >
@@ -63,7 +63,7 @@ const Topbar = () => {
                             <span>
                                 <NavLink
                                     to="/account"
-                                    className="block p-6 border-b-4 border-transparent hover:border-red-700"
+                                    className="block p-6 border-b-4 border-transparent hover:border-pink-700"
                                 >
                                     <svg
                                         className="w-4 h-4"
@@ -87,7 +87,7 @@ const Topbar = () => {
                             <span className="hidden sm:block">
                                 <button
                                     onClick={logout}
-                                    className="block p-6 border-b-4 border-transparent hover:border-red-700"
+                                    className="block p-6 border-b-4 border-transparent hover:border-pink-700"
                                 >
                                     <svg className="w-4 h-4"
                                         xmlns="http://www.w3.org/2000/svg"

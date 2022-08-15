@@ -64,7 +64,7 @@ const UserInfo = () => {
             {success ? <Alert type="success" message={success} /> : null}
             <div className="max-w-screen-xl px-4 py-16 mx-auto sm:px-6 lg:px-8 ">
                 <div className="max-w-lg mx-auto">
-                    <h1 className="text-2xl font-bold text-center text-indigo-600 sm:text-3xl">Update Your Account</h1>
+                    <h1 className="text-2xl font-bold text-center text-pink-600 sm:text-3xl">Update Your Account</h1>
 
                     <form onSubmit={saveChanges} className="p-8 mt-6 mb-0 space-y-4 rounded-lg shadow-2xl">
 
@@ -94,7 +94,6 @@ const UserInfo = () => {
                                     className="w-full p-4 pr-12 text-sm border-gray-200 rounded-lg shadow-sm"
                                     placeholder="Update email"
                                 />
-
                             </div>
                         </div>
 
@@ -107,13 +106,12 @@ const UserInfo = () => {
                                     onChange={(event) => { setPassword(event.target.value) }}
                                     className="w-full p-4 pr-12 text-sm border-gray-200 rounded-lg shadow-sm"
                                     placeholder="Update password"
-
                                 />
 
                             </div>
                         </div>
 
-                        <button type="submit" className="block w-full px-5 py-3 text-sm font-medium text-white bg-indigo-600 rounded-lg">
+                        <button type="submit" className="block w-full px-5 py-3 text-sm font-medium text-white bg-pink-600 rounded-lg">
                             Update
                         </button>
                     </form>
